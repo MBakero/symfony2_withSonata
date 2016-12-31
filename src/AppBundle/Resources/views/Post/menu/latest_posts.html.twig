@@ -1,0 +1,18 @@
+<div class="page-header">
+    <h3>Latest Posts</h3>
+</div>
+
+<ul class="list-unstyled">
+    {% for object in objects %}
+        <li class="row" style="border-bottom: 1px solid #eee; margin-bottom: 10px;">
+            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                <a href="#"  class="img-responsive">{% media object.image, 'small' %}</a>
+            </div>
+
+            <dl class="col-lg-8 col-md-8 col-sm-9 col-xs-9" style="margin-bottom: 0; padding: 0;">
+                <dt style="margin-bottom: 5px;">{{ object.title }}</dt>
+                <dd>17/01/2015 - by <a href="#">{{ object.author }}</a></dd>
+            </dl>
+        </li>
+    {% endfor %}
+</ul>
