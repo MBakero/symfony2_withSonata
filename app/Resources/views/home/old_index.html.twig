@@ -1,0 +1,409 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-theme.min.css') }}" rel="stylesheet">
+
+    <style>
+        .footer {
+            background-color: #262626;
+            color: #999;
+        }
+
+        footer .widget-title {
+            margin-top: 35px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .cw-tags a {
+            color: #bfbfbf;
+            border: 1px solid rgba(0,0,0,0.1);
+            display: inline-block;
+            padding: 3px 16px;
+            font-size: 14px;
+            line-height: 22px;
+            margin: 0 1px 6px 0;
+            background-color: rgba(0,0,0,0.1);
+            -webkit-transition: background 0.3s,color 0.3s,border-color .3s;
+            transition: background 0.3s,color 0.3s,border-color .3s;
+        }
+
+        .cw-tags a:hover {
+            background: #97BC23;
+            border-color: #97BC23;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        aside .cw-tags a {
+            color: gray;
+            background-color: transparent;
+        }
+
+        address a {
+            color: #999;
+        }
+
+        .list-recent a {
+            color: #bfbfbf;
+            display: inline-block;
+            padding: 3px 0;
+            font-size: 14px;
+            line-height: 22px;
+            margin: 0 1px 6px 0;
+
+        }
+
+        .list-recent a:hover {
+            color: #97BC23;
+            text-decoration: none;
+        }
+
+        .subfooter {
+            background-color: #000;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .subfooter a {
+            color: #97BC23;
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -ms-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            text-decoration: none;
+        }
+
+        .rights{
+            margin: 10px;
+        }
+
+        .blog-post a, .latest-posts a {
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -ms-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img alt="Brand" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAB+0lEQV
+                  R4AcyYg5LkUBhG+1X2PdZGaW3btm3btm3bHttWrPomd1r/2Jn/VJ02TpxcH4CQ/dsuazWgzbIdrm9dZVd4pBz4zx2igTaFHrhv
+                  jneVXNHCSqIlFEjiwMyyyOBilRgGSqLNF1jnwNQdIvAt48C3IlBmHCiLQHC2zoHDu6zG1iXn6+y62ScxY9AODO6w0pvAqf23oS
+                  E4joOfH6OxfMoRnoGUm+de8wykbFt6wZtA07QwtNOqKh3ZbS3Wzz2F+1c/QJY0UCJ/J3kXWJfv7VhxCRRV1jGw7XI+gcO7rEFF
+                  RvdYxydwcPsVsC0bQdKScngt4iUTD4Fy/8p7PoHzRu1DclwmgmiqgUXjD3oTKHbAt869qdJ7l98jNTEblPTkXMwetpvnftA0LL
+                  Hb4X8kiY9Kx6Q+W7wJtG0HR7fdrtYz+x7iya0vkEtUULIzCjC21wY+W/GYXusRH5kGytWTLxgEEhePPwhKYb7EK3BQuxWwTBuU
+                  kd3X8goUn6fMHLyTT+DCsQdAEXNzSMeVPAJHdF2DmH8poCREp3uwm7HsGq9J9q69iuunX6EgrwQVObjpBt8z6rdPfvE8kiiyhs
+                  vHnomrQx6BxYUyYiNS8f75H1w4/ISepDZLoDhNJ9cdNUquhRsv+6EP9oNH7Iff2A9g8h8CLt1gH0Qf9NMQAFnO60BJFQe0AAAA
+                  AElFTkSuQmCC" height="20" width="20">
+                    </a>
+                    <p class="navbar-text">FProject</p>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Login / Sign up</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog-post" style="border-bottom: 1px solid #eee; margin-bottom: 40px; padding-bottom: 40px;">
+                    <div class="">
+                        <a href="#"><img src="images/blog/fullsite-img12.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <div class="caption">
+                        <h3 class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam voluptatem sequi nesciunt.
+                        </p>
+                    </div>
+
+                    <div class="pull-right">
+                        <a class="" href="#">Continue Reading <i class="glyphicon glyphicon-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog-post" style="border-bottom: 1px solid #eee; margin-bottom: 40px; padding-bottom: 40px;">
+                    <div class="">
+                        <a href="#"><img src="images/blog/fullsite-img11.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <div class="caption">
+                        <h3 class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam voluptatem sequi nesciunt.
+                        </p>
+                    </div>
+
+                    <div class="pull-right">
+                        <a class="" href="#">Continue Reading <i class="glyphicon glyphicon-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog-post" style="border-bottom: 1px solid #eee; margin-bottom: 40px; padding-bottom: 40px;">
+                    <div class="">
+                        <a href="#"><img src="images/blog/site-img53.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <div class="caption">
+                        <h3 class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam voluptatem sequi nesciunt.
+                        </p>
+                    </div>
+
+                    <div class="pull-right">
+                        <a class="" href="#">Continue Reading <i class="glyphicon glyphicon-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <nav aria-label="Page navigation" class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <aside class="col-md-3 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 categories-posts">
+                        <div class="page-header">
+                            <h3>Categories</h3>
+                        </div>
+                        <ul class="list-group">
+                            <a href="#" class="list-group-item active"><span class="badge">14</span>News</a>
+                            <a href="#" class="list-group-item"><span class="badge">16</span>Design</a>
+                            <a href="#" class="list-group-item"><span class="badge">22</span>Development</a>
+                            <a href="#" class="list-group-item"><span class="badge">52</span>HTML5 & CSS3</a>
+                            <a href="#" class="list-group-item"><span class="badge">343</span>Graphic</a>
+                            <a href="#" class="list-group-item"><span class="badge">34</span>Wordpress</a>
+                            <a href="#" class="list-group-item"><span class="badge">152</span>Tutorial</a>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 latest-posts">
+                        <div class="page-header">
+                            <h3>Latest Posts</h3>
+                        </div>
+
+                        <ul class="list-unstyled">
+                            <li class="row" style="border-bottom: 1px solid #eee; margin-bottom: 10px;">
+                                <figure class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                                    <img src="images/blog/blog_thumb1.jpg" alt="Entry name" class="img-responsive">
+                                </figure>
+
+                                <dl class="col-lg-8 col-md-8 col-sm-9 col-xs-9" style="margin-bottom: 0; padding: 0;">
+                                    <dt style="margin-bottom: 5px;">Sequi veniam suscipit atque sapiente cum voluptatum.</dt>
+                                    <dd>17/01/2015 - by <a href="#">Jejis</a></dd>
+                                </dl>
+                            </li>
+
+                            <li class="row" style="border-bottom: 1px solid #eee; margin-bottom: 10px;">
+                                <figure class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                                    <img src="images/blog/blog_thumb2.jpg" alt="Entry name" class="img-responsive">
+                                </figure>
+
+                                <dl class="col-lg-8 col-md-8 col-sm-9 col-xs-9" style="margin-bottom: 0; padding: 0;">
+                                    <dt style="margin-bottom: 5px;">Sequi veniam suscipit atque sapiente cum voluptatum.</dt>
+                                    <dd>17/01/2015 - by <a href="#">Jejis</a></dd>
+                                </dl>
+                            </li>
+
+                            <li class="row" style="border-bottom: 1px solid #eee; margin-bottom: 10px;">
+                                <figure class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                                    <img src="images/blog/blog_thumb3.jpg" alt="Entry name" class="img-responsive">
+                                </figure>
+
+                                <dl class="col-lg-8 col-md-8 col-sm-9 col-xs-9" style="margin-bottom: 0; padding: 0;">
+                                    <dt style="margin-bottom: 5px;">Sequi veniam suscipit atque sapiente cum voluptatum.</dt>
+                                    <dd>17/01/2015 - by <a href="#">Jejis</a></dd>
+                                </dl>
+                            </li>
+
+                            <li class="row" style="border-bottom: 1px solid #eee; margin-bottom: 10px;">
+                                <figure class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                                    <img src="images/blog/blog_thumb4.jpg" alt="Entry name" class="img-responsive">
+                                </figure>
+
+                                <dl class="col-lg-8 col-md-8 col-sm-9 col-xs-9" style="margin-bottom: 0; padding: 0;">
+                                    <dt style="margin-bottom: 5px;">Sequi veniam suscipit atque sapiente cum voluptatum.</dt>
+                                    <dd>17/01/2015 - by <a href="#">Jejis</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-header">
+                            <h3>Tags</h3>
+                        </div>
+
+                        <div class="cw-tags">
+                            <a href="#">html5</a>
+                            <a href="#">css3</a>
+                            <a href="#">jquery</a>
+                            <a href="#">music</a>
+                            <a href="#">video</a>
+                            <a href="#">design</a>
+                            <a href="#">less</a>
+                            <a href="#">sass</a>
+                            <a href="#">php</a>
+                            <a href="#">wordpress</a>
+                            <a href="#">javascript</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h3 class="widget-title">About Us</h3>
+                        <h3><small>First Project</small></h3>
+                        <p class="">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, rerum.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h3 class="widget-title">Recent Posts</h3>
+                        <ul class="list-unstyled list-recent">
+                            <li><a href="#">Huc exquirere quietem</a></li>
+                            <li><a href="#">Sapientium praesentibus</a></li>
+                            <li><a href="#">Usus finiri peccant aristippi</a></li>
+                            <li><a href="#">Lucunditatem timorem fere</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h3 class="widget-title">Tags</h3>
+                        <div class="widget">
+                            <div class="cw-tags">
+                                <a href="#">html5</a>
+                                <a href="#">css3</a>
+                                <a href="#">jquery</a>
+                                <a href="#">music</a>
+                                <a href="#">video</a>
+                                <a href="#">design</a>
+                                <a href="#">less</a>
+                                <a href="#">sass</a>
+                                <a href="#">php</a>
+                                <a href="#">wordpress</a>
+                                <a href="#">javascript</a>
+                            </div>
+                            <!-- .cw-tags -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h3 class="widget-title">Find Us</h3>
+                        <address>
+                            <strong>Twitter, Inc.</strong><br>
+                            1355 Market Street, Suite 900<br>
+                            San Francisco, CA 94103<br>
+                            <abbr title="Phone">P:</abbr> (123) 456-7890
+                        </address>
+
+                        <address>
+                            <strong>El HAMOUDI ABDESSAMAD</strong><br>
+                            <a>first.last@example.com</a>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="rights">
+                            Copyright © 2015 Saliente by <a target="_blank" href="#">Ab2</a>. All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+{% endblock %}

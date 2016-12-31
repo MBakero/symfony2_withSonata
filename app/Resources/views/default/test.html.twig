@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Test</title>
+</head>
+<body>
+    <div>
+        {{ render(controller('SonataNewsbundle:Post:archive')) }}
+
+
+    </div>
+
+    {% for object in objects %}
+        <div>
+            <h3>{{ object.id }}</h3>
+        </div>
+    {% endfor %}
+</body>
+</html>
+
+
